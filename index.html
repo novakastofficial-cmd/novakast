@@ -1,99 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaKast - Coming Soon</title>
+    <title>NovaKast - Live Streaming</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
             background-color: #0b0f19;
-        }
-        .bg-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-        /* कंप्यूटर के लिए डेस्कटॉप वीडियो दिखेगा */
-        @media (min-width: 768px) {
-            .mobile-vid { display: none; }
-        }
-        /* मोबाइल के लिए मोबाइल वीडियो दिखेगा */
-        @media (max-width: 767px) {
-            .desktop-vid { display: none; }
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 15, 25, 0.5);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
             text-align: center;
-            padding: 20px;
         }
         .logo {
             width: 120px;
             height: 120px;
             border-radius: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(0, 219, 222, 0.5);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+        video {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
+        }
+        /* मोबाइल के लिए वीडियो साइज */
+        .mobile-vid { display: none; }
+        .desktop-vid { display: block; }
+        @media (max-width: 768px) {
+            .desktop-vid { display: none; }
+            .mobile-vid { display: block; width: 95%; }
         }
         h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #a855f7, #06b6d4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin: 10px 0;
         }
         p {
-            font-size: 1.2rem;
-            color: #e2e8f0;
-            margin-bottom: 25px;
-        }
-        .badge {
-            display: inline-block;
-            padding: 10px 25px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 30px;
-            font-size: 0.9rem;
+            color: #94a3b8;
+            font-size: 1.1rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
 <body>
 
-    <!-- डेस्कटॉप वीडियो -->
-    <video autoplay muted loop class="bg-video desktop-vid">
+    <!-- आपका लोगो -->
+    <img src="logo.png" alt="NovaKast Logo" class="logo">
+
+    <h1>NovaKast</h1>
+    <p>LIVE STREAMING PLATFORM</p>
+
+    <!-- कंप्यूटर के लिए वीडियो -->
+    <video class="desktop-vid" controls autoplay muted loop playsinline>
         <source src="desktop-video.mp4" type="video/mp4">
+        आपका ब्राउज़र वीडियो का समर्थन नहीं करता है।
     </video>
 
-    <!-- मोबाइल वीडियो -->
-    <video autoplay muted loop class="bg-video mobile-vid">
+    <!-- मोबाइल के लिए वीडियो -->
+    <video class="mobile-vid" controls autoplay muted loop playsinline>
         <source src="mobile-video.mp4" type="video/mp4">
+        आपका ब्राउज़र वीडियो का समर्थन नहीं करता है।
     </video>
 
-    <div class="overlay">
-        <img src="logo.png" alt="NovaKast Logo" class="logo">
-        <h1>NovaKast</h1>
-        <p>Live Streaming Platform is launching soon. Get ready for a brand new experience.</p>
-        <div class="badge">Coming Soon</div>
-    </div>
+    <p style="margin-top: 20px; font-size: 1rem; color: #38bdf8;">Coming Soon - Get ready for a brand new experience.</p>
 
 </body>
 </html>
